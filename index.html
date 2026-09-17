@@ -3,70 +3,361 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PureScreen Minimal — Privacy Policy</title>
+<title>PureScreen Minimal — Focus Launcher & Digital Detox</title>
+<meta name="description" content="PureScreen Minimal is an ultra-sleek, typography-driven Android launcher designed for digital detox, mindfulness, and eliminating phone addiction. USD 3.00 one-time purchase. Zero ads.">
 <style>
   :root {
-    --bg: #090B0D; --surface: #14181D; --text: #E6EDF2;
-    --muted: #8899A6; --accent: #E2B053; --line: #222B35;
+    --bg: #090B0D;
+    --surface: #12161B;
+    --surface-card: #181E24;
+    --border: #232D36;
+    --text: #F0F4F8;
+    --muted: #8B9CA8;
+    --gold: #E2B053;
+    --gold-glow: rgba(226, 176, 83, 0.15);
+    --sage: #7EA895;
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    margin: 0; background: var(--bg); color: var(--text);
+    background-color: var(--bg);
+    color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65; padding: 40px 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
-  .container { max-width: 760px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 20px; border: 1px solid var(--line); }
-  h1 { font-size: 2.2rem; color: #fff; margin-top: 0; font-weight: 300; }
-  h2 { font-size: 1.3rem; color: var(--accent); margin-top: 32px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
-  p, li { color: var(--muted); font-size: 1rem; }
-  strong { color: var(--text); }
-  .badge { display: inline-block; background: var(--accent); color: #000; font-weight: 700; padding: 4px 14px; border-radius: 999px; font-size: 0.85rem; margin-bottom: 16px; }
-  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--muted); text-align: center; }
-  footer a { color: var(--accent); text-decoration: none; }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Navigation */
+  nav {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  .nav-ring {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-dot {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .nav-links { display: flex; gap: 20px; font-size: 0.95rem; }
+
+  /* Hero Section */
+  .hero {
+    max-width: 960px;
+    margin: 40px auto 60px;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px var(--gold-glow);
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+  }
+  .hero p {
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 14px 34px;
+    border-radius: 999px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(226, 176, 83, 0.35);
+    text-decoration: none;
+  }
+
+  /* Mock Phone Frame */
+  .phone-container {
+    max-width: 340px;
+    margin: 50px auto 80px;
+    background: #000000;
+    border: 2px solid var(--border);
+    border-radius: 40px;
+    padding: 36px 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+    text-align: left;
+  }
+  .phone-date { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.5px; }
+  .phone-time { font-size: 3.6rem; font-weight: 200; letter-spacing: -2px; margin: 4px 0 12px; color: #fff; }
+  .phone-focus-pill {
+    display: inline-block;
+    background: rgba(126, 168, 149, 0.15);
+    border: 1px solid rgba(126, 168, 149, 0.3);
+    color: var(--sage);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 28px;
+  }
+  .phone-apps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+  .phone-app-item {
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: #FFFFFF;
+    cursor: default;
+    transition: color 0.15s;
+  }
+  .phone-app-item:hover { color: var(--gold); }
+  .phone-bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    font-size: 0.88rem;
+  }
+  .phone-btn-focus { color: var(--gold); font-weight: 500; }
+  .phone-btn-drawer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  /* Feature Grid */
+  .features-section {
+    max-width: 1040px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+  }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-heading h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .section-heading p { color: var(--muted); font-size: 1.05rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    border-color: rgba(226, 176, 83, 0.4);
+    transform: translateY(-3px);
+  }
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* Philosophy / Banner */
+  .quote-box {
+    max-width: 860px;
+    margin: 0 auto 90px;
+    background: linear-gradient(135deg, var(--surface) 0%, #0d1217 100%);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 36px;
+    text-align: center;
+  }
+  .quote-box h3 { font-size: 1.6rem; font-weight: 300; color: #fff; margin-bottom: 14px; }
+  .quote-box p { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 0 auto 24px; }
+  .quote-box .pill-list { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .pill {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-links { margin-bottom: 16px; display: flex; justify-content: center; gap: 24px; }
 </style>
 </head>
 <body>
-<div class="container">
-  <span class="badge">PRIVACY FIRST · 100% OFFLINE</span>
-  <h1>Privacy Policy for PureScreen Minimal</h1>
-  <p><strong>Effective Date:</strong> September 17, 2026<br>
-  <strong>Developer:</strong> Lalith Madanayake (LP Residence, Kottawa, Western Province, Sri Lanka)</p>
 
-  <h2>1. Overview & Core Philosophy</h2>
-  <p>PureScreen Minimal is an offline-first, distraction-free minimalist Android launcher designed to reduce screen time and restore digital well-being. We believe your device usage, habits, and application choices are strictly your personal property. PureScreen Minimal does not collect, transmit, sell, or monetize any of your personal data.</p>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-ring"><div class="nav-dot"></div></div>
+    <span>PureScreen Minimal</span>
+  </div>
+  <div class="nav-links">
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</nav>
 
-  <h2>2. Data Collection and Usage</h2>
-  <p><strong>Zero Data Collected:</strong> PureScreen Minimal does not collect any personal data, analytics, device identifiers, IP addresses, location data, or telemetry.</p>
-  <ul>
-    <li><strong>Installed Applications:</strong> PureScreen Minimal queries installed launcher activities strictly on your local device to render your application drawer and home screen shortcuts. This list is never transmitted anywhere.</li>
-    <li><strong>User Customizations:</strong> Your pinned apps, hidden apps, custom app names, mindful delay settings, and theme preferences are stored strictly on your device using Android's encrypted DataStore.</li>
-    <li><strong>Focus / Monk Mode:</strong> All focus session timers and schedules operate entirely locally on your device.</li>
-  </ul>
+<header class="hero">
+  <div class="badge">✦ USD 3.00 · ONE-TIME PAYMENT · NO ADS · NO SUBSCRIPTIONS</div>
+  <h1>Breathe. Focus.<br>Reclaim Your Attention.</h1>
+  <p>The distraction-free Android launcher designed to eliminate phone addiction and restore mental clarity through calm, intentional typography.</p>
+  <a href="#preview" class="hero-cta">See How It Works ↓</a>
+</header>
 
-  <h2>3. Network & Internet Permissions</h2>
-  <p>PureScreen Minimal <strong>does not request or require the Android Internet permission</strong> (<code>android.permission.INTERNET</code>). The application has no technical capability to connect to the internet, cloud servers, or third-party tracking services.</p>
+<!-- Phone Screen Preview -->
+<div class="phone-container" id="preview">
+  <div class="phone-date">Thursday, September 17</div>
+  <div class="phone-time">10:42</div>
+  <div class="phone-focus-pill">◉ Deep Focus Active</div>
+  
+  <div class="phone-apps">
+    <div class="phone-app-item">• phone</div>
+    <div class="phone-app-item">• messages</div>
+    <div class="phone-app-item">• camera</div>
+    <div class="phone-app-item">• notes</div>
+    <div class="phone-app-item">• calendar</div>
+  </div>
 
-  <h2>4. Third-Party Services & SDKs</h2>
-  <p>PureScreen Minimal contains zero third-party advertising SDKs, zero analytics trackers, and zero external telemetry frameworks. No data is shared with Google, Facebook, advertisers, or any data brokers.</p>
-
-  <h2>5. Children's Privacy</h2>
-  <p>PureScreen Minimal does not collect any personal information from anyone, including children under the age of 13. It is safe for all age demographics.</p>
-
-  <h2>6. Security</h2>
-  <p>All application preferences are saved within your device's sandboxed private application storage, protected by Android operating system permissions.</p>
-
-  <h2>7. Contact Information</h2>
-  <p>If you have any questions or feedback regarding this Privacy Policy, please contact:</p>
-  <p>
-    <strong>Developer:</strong> Lalith Madanayake<br>
-    <strong>Email:</strong> <a href="mailto:lmadanayake@gmail.com">lmadanayake@gmail.com</a><br>
-    <strong>Phone:</strong> +94 77 721 0775<br>
-    <strong>Address:</strong> LP Residence, Kottawa, Western Province, Sri Lanka
-  </p>
-
-  <footer>
-    &copy; 2026 Lalith Madanayake. All rights reserved. PureScreen Minimal.
-  </footer>
+  <div class="phone-bottom-nav">
+    <span class="phone-btn-focus">◉ Focus</span>
+    <span class="phone-btn-drawer">All Apps</span>
+    <span>⚙</span>
+  </div>
 </div>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="section-heading">
+    <h2>Built for Digital Well-Being</h2>
+    <p>Every pixel is designed to break mindless scrolling loops.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">🧘</div>
+      <h3>Pure Typography Interface</h3>
+      <p>Strips away bright red notification badges, colourful app grids, and dopamine traps. Your essential tools are displayed in serene, high-contrast typography.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⏱️</div>
+      <h3>Mindful Friction (Pause Delay)</h3>
+      <p>Introduce an intentional 3 to 10-second breathing pause before addictive apps open. Prompts: <em>"Are you opening this with intention?"</em> with a one-tap exit button.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Deep Focus / Monk Mode</h3>
+      <p>Lock down distractions for 15, 25 (Pomodoro), 45, or 60 minutes. Keeps only essential tools (Phone, Messages, Calculator) accessible during deep work.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Instant 1-Keystroke Drawer</h3>
+      <p>Blazing-fast alphabetical search finds any installed app in a single tap. Long-press to pin, rename, hide, or apply mindful delay intervals.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">✏️</div>
+      <h3>Rename & Hide Distractions</h3>
+      <p>Rename apps to reflect your true intent (e.g. rename social media to "Time Sink") or hide unwanted apps entirely from your drawer.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <h3>100% Offline & Private</h3>
+      <p>PureScreen does not even request the Android Internet permission. Zero analytics, zero cloud transmission, zero tracking. Your habits stay on your phone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Zero Ads Commitment -->
+<div class="quote-box">
+  <h3>The Anti-Subscription Guarantee</h3>
+  <p>Most launchers charge $30+/year. PureScreen Minimal is a simple, ethical one-time purchase of USD 3.00. No monthly charges. No paywalls. No advertisements.</p>
+  <div class="pill-list">
+    <span class="pill">✓ One-Time Purchase (USD 3)</span>
+    <span class="pill">✓ Zero Subscriptions</span>
+    <span class="pill">✓ Zero Advertisements</span>
+    <span class="pill">✓ 100% Offline</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://github.com/Lalith6505/PureScreen-Minimal">GitHub Repository</a>
+  </div>
+  <p>PureScreen Minimal is developed by <strong>Lalith Madanayake</strong>.</p>
+  <p>Contact: <a href="mailto:lmadanayake@gmail.com">lmadanayake@gmail.com</a> · +94 77 721 0775<br>
+  LP Residence, Kottawa, Western Province, Sri Lanka</p>
+  <p style="margin-top: 14px; opacity: 0.6;">&copy; 2026 Lalith Madanayake. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
